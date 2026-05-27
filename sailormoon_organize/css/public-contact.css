@@ -1,0 +1,20 @@
+/* ── Contact page layout ── */
+.contact-icon { font-size:80px; display:block; text-align:center; animation:spin 4s ease-in-out infinite; margin-bottom:1rem; }
+@keyframes spin { 0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);} }
+
+/* ── Contact form card ── */
+.contact-form-card { background:#fff; border-radius:30px; border:5px solid #ff6fb5; box-shadow:0 15px 40px rgba(255,111,181,.25); padding:2.5rem; }
+.sm-label { display:block; font-weight:600; color:#ff6fb5; margin-bottom:.3rem; }
+.sm-input { width:100%; padding:.75rem 1.3rem; border:3px solid #ffe4f5; border-radius:50px; font-family:'Fredoka',sans-serif; font-size:1rem; outline:none; transition:all .3s; }
+.sm-input:focus { border-color:#ff6fb5; box-shadow:0 0 0 .2rem rgba(255,111,181,.2); }
+textarea.sm-input { border-radius:20px; resize:vertical; min-height:130px; }
+.btn-submit { width:100%; background:linear-gradient(135deg,#ff6fb5,#ffd56a); color:#fff; border:none; border-radius:50px; font-family:'Fredoka',sans-serif; font-size:1.1rem; font-weight:700; padding:.95rem; cursor:pointer; box-shadow:0 6px 0 #d4598f; transition:all .2s; }
+.btn-submit:hover { transform:translateY(-4px); }
+
+/* ── Info cards ── */
+.info-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.2rem; margin-top:2.5rem; }
+.info-card { background:#fff; border-radius:20px; border:3px solid #ff6fb5; padding:1.5rem; text-align:center; box-shadow:0 6px 15px rgba(255,111,181,.15); transition:all .3s; }
+.info-card:hover { transform:translateY(-6px) rotate(1deg); }
+.info-card-icon  { font-size:2.5rem; margin-bottom:.5rem; }
+.info-card-title { font-family:'Bubblegum Sans',cursive; color:#ff6fb5; font-size:1.1rem; margin-bottom:.3rem; }
+.info-card-text  { color:#888; font-size:.9rem; }

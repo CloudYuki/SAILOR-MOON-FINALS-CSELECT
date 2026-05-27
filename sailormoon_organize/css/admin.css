@@ -1,0 +1,98 @@
+/* ── Reset ── */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Fredoka',sans-serif; background:#ffe4f5; min-height:100vh; }
+
+/* ── Floating background ── */
+.magical-bg { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:hidden; }
+.float-item { position:absolute; font-size:26px; opacity:0; animation:floatUp 8s infinite ease-in-out; }
+@keyframes floatUp {
+    0%  { transform:translateY(100vh) rotate(0deg); opacity:0; }
+    10% { opacity:0.5; }
+    90% { opacity:0.5; }
+    100%{ transform:translateY(-100px) rotate(360deg); opacity:0; }
+}
+
+/* ── Top header bar ── */
+header {
+    position:sticky; top:0; z-index:200;
+    background:linear-gradient(rgba(255,240,249,0.95),rgba(255,228,245,0.95));
+    border-bottom:5px solid;
+    border-image:linear-gradient(90deg,#ff6fb5,#ffd56a,#6a8cff,#ff6fb5) 1;
+    box-shadow:0 4px 20px rgba(255,111,181,0.3);
+}
+.header-inner { max-width:1300px; margin:0 auto; padding:.8rem 2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+.logo-area { display:flex; align-items:center; gap:1rem; text-decoration:none; }
+.logo-moon { font-size:44px; animation:gentleSpin 4s ease-in-out infinite; }
+@keyframes gentleSpin { 0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);} }
+.logo-text { font-family:'Bubblegum Sans',cursive; font-size:1.6rem; background:linear-gradient(135deg,#ff6fb5,#ffd56a,#6a8cff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:2px; }
+.admin-badge { background:#ff6fb5; color:#fff; font-size:.75rem; font-weight:700; padding:.2rem .6rem; border-radius:50px; margin-left:.5rem; }
+
+/* ── Nav links ── */
+nav { display:flex; gap:.7rem; flex-wrap:wrap; }
+.nav-link {
+    padding:.5rem 1.1rem; text-decoration:none; font-family:'Fredoka',sans-serif;
+    font-weight:600; font-size:.95rem; color:#fff; border-radius:50px;
+    border:2px solid #fff; transition:all .2s; cursor:pointer;
+}
+.nav-link.pink   { background:linear-gradient(135deg,#ff6fb5,#ff8ec7); box-shadow:0 4px 0 #d4598f; }
+.nav-link.blue   { background:linear-gradient(135deg,#6a8cff,#8ba8ff); box-shadow:0 4px 0 #5470d4; }
+.nav-link.gold   { background:linear-gradient(135deg,#ffd56a,#ffe089); box-shadow:0 4px 0 #d4b054; color:#555; }
+.nav-link.purple { background:linear-gradient(135deg,#a06fff,#b88aff); box-shadow:0 4px 0 #8054d4; }
+.nav-link.red    { background:linear-gradient(135deg,#ff6b6b,#ff8e8e); box-shadow:0 4px 0 #d44f4f; }
+.nav-link:hover  { transform:translateY(-4px); filter:brightness(1.05); }
+
+/* ── Page wrapper ── */
+.page-wrap { max-width:1300px; margin:2rem auto; padding:0 1.5rem; position:relative; z-index:10; }
+
+/* ── Section card ── */
+.section-card {
+    background:#fff; border-radius:25px; border:4px solid #ff6fb5;
+    box-shadow:0 10px 30px rgba(255,111,181,0.2); padding:2rem; margin-bottom:2rem;
+}
+.section-title { font-family:'Bubblegum Sans',cursive; font-size:2rem; color:#ff6fb5; margin-bottom:1.2rem; }
+
+/* ── Tables ── */
+.sm-table { width:100%; border-collapse:collapse; }
+.sm-table th { background:#ff6fb5; color:#fff; font-family:'Bubblegum Sans',cursive; font-size:1rem; padding:.8rem 1rem; text-align:left; }
+.sm-table td { padding:.75rem 1rem; border-bottom:2px solid #ffe4f5; color:#555; vertical-align:middle; font-size:.95rem; }
+.sm-table tr:hover td { background:#fff8fc; }
+
+/* ── Buttons ── */
+.btn-sm-pink   { background:#ff6fb5; color:#fff; border:none; border-radius:50px; padding:.4rem 1rem; font-family:'Fredoka',sans-serif; font-weight:600; cursor:pointer; text-decoration:none; font-size:.9rem; transition:all .2s; }
+.btn-sm-pink:hover { background:#d4598f; color:#fff; }
+.btn-sm-blue   { background:#6a8cff; color:#fff; border:none; border-radius:50px; padding:.4rem 1rem; font-family:'Fredoka',sans-serif; font-weight:600; cursor:pointer; text-decoration:none; font-size:.9rem; transition:all .2s; }
+.btn-sm-blue:hover { background:#5470d4; color:#fff; }
+.btn-sm-red    { background:#ff6b6b; color:#fff; border:none; border-radius:50px; padding:.4rem 1rem; font-family:'Fredoka',sans-serif; font-weight:600; cursor:pointer; text-decoration:none; font-size:.9rem; transition:all .2s; }
+.btn-sm-red:hover { background:#d44f4f; color:#fff; }
+.btn-sm-gold   { background:#ffd56a; color:#555; border:none; border-radius:50px; padding:.4rem 1rem; font-family:'Fredoka',sans-serif; font-weight:600; cursor:pointer; text-decoration:none; font-size:.9rem; transition:all .2s; }
+
+/* ── Forms ── */
+.sm-label { display:block; font-weight:600; color:#ff6fb5; margin-bottom:.3rem; }
+.sm-input { width:100%; padding:.7rem 1.2rem; border:3px solid #ffe4f5; border-radius:50px; font-family:'Fredoka',sans-serif; font-size:1rem; outline:none; transition:all .3s; }
+.sm-input:focus { border-color:#ff6fb5; box-shadow:0 0 0 .2rem rgba(255,111,181,.2); }
+textarea.sm-input { border-radius:20px; resize:vertical; min-height:100px; }
+.btn-submit {
+    background:linear-gradient(135deg,#ff6fb5,#ffd56a); color:#fff; border:none;
+    border-radius:50px; font-family:'Fredoka',sans-serif; font-size:1.05rem; font-weight:700;
+    padding:.8rem 2.5rem; cursor:pointer; box-shadow:0 6px 0 #d4598f; transition:all .2s;
+}
+.btn-submit:hover { transform:translateY(-3px); }
+
+/* ── Alerts ── */
+.sm-alert { border-radius:15px; font-family:'Fredoka',sans-serif; font-size:1rem; padding:.8rem 1.2rem; margin-bottom:1rem; }
+.sm-alert-success { background:#d4edda; border:2px solid #28a745; color:#155724; }
+.sm-alert-danger  { background:#f8d7da; border:2px solid #dc3545; color:#721c24; }
+
+/* ── Search bar ── */
+.search-row { display:flex; gap:.7rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+.search-row .sm-input { border-radius:50px; flex:1; min-width:220px; }
+
+/* ── Stat cards ── */
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; margin-bottom:2rem; }
+.stat-card { background:#fff; border-radius:20px; border:3px solid #ff6fb5; padding:1.2rem; text-align:center; box-shadow:0 5px 15px rgba(255,111,181,.15); }
+.stat-icon { font-size:2.2rem; margin-bottom:.4rem; }
+.stat-num  { font-family:'Bubblegum Sans',cursive; font-size:2rem; color:#ff6fb5; }
+.stat-lbl  { font-size:.85rem; color:#999; }
+
+/* ── Footer ── */
+footer { text-align:center; padding:1.5rem; color:#aaa; font-size:.9rem; margin-top:2rem; border-top:2px dashed #ff6fb5; }
